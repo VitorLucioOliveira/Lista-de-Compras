@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Lista de Compras</title>
+</head>
+
+<body>
+    <main>
+        <img src="img/bag.png" alt="Sacola de Compras">
+        <form>
+            <input type="text" id="input-item" placeholder="Digite o item que deseja adicionar">
+            <button id="button-item">Salvar item</button>
+        </form>
+        
+
+
+        <ul id="lista_compras">
+            <h2>Lista de Compras</h2>
+            <hr />
+
+            <li>
+                <div class="item-lista-container">
+                    <!-- Parte Item -->
+                    <div class="container-nome">
+                        <div class="checkbox-container">
+                            <label for="checkbox-1">
+                                <input type="checkbox" class="checkbox-input" id="checkbox-1" />
+                                <div class="checkbox-customizado checked"></div>
+                            </label>
+                        </div> 
+                        <p>Arroz</p>
+                    </div>
+                    <!-- Parte Buttons-->
+                    <div>
+                        <button  class="container-botoes">
+                            <img src="img/Excluir.png" alt="Excluir">
+                        </button>
+                        <button  class="container-botoes">
+                            <img src="img/Edicao.png" alt="Editar">
+                        </button>
+                    </div>
+                </div>
+
+                <p class="item-data">Segunda-feira (31/10/2022) às 08:30</p>
+            </li>
+        </ul>
+
+    
+
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
