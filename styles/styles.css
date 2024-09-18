@@ -4,19 +4,17 @@
 @import url(reset.css);
 
 :root {
-    --cor-fundo-degrade: linear-gradient(180deg, #000000 0%, #26327F 100%);
-    --cor-fundo: #F9F9F9;
-    --cor-destaque: #F55B64;
-    --cor-destaque-hover: #C2373F;
+    --cor-primaria: #F55B64;
+    --cor-secundaria: #C2373F;
+    --neutro: #F9F9F9;
     --preto: #131730;
-
     --fonte-titulo: "Krona One", sans-serif;
     --fonte-texto: 'Numans', sans-serif;
-    --fonte-input: 'Montserrat', sans-serif;
+    --degrade-azul: linear-gradient(180deg, #000000 0%, #26327F 100%);
 }
 
 body {
-    background: var(--cor-fundo-degrade);
+    background: var(--degrade-azul);
     background-repeat: no-repeat;
     height: 100vh;
 
@@ -25,10 +23,8 @@ body {
     align-items: center;
 }
 
-
-
 main {
-
+    background-color: var(--neutro);
     margin-top: 64px;
 
     display: flex;
@@ -36,28 +32,24 @@ main {
     gap: 24px;
 
     width: 440px;
-    align-items: center;
-
-    background-color: var(--cor-fundo);
-    border-radius: 16px;
     padding: 56px;
 
+    align-items: center;
+    border-radius: 16px;
 }
 
 h2 {
     font-family: var(--fonte-titulo);
-    color: var(--cor-destaque);
-
-    text-align: left;
+    color: var(--cor-primaria);
     font-size: 20px;
-    line-height: 33px;
+    font-weight: 400;
+    line-height: 32px;
 }
 
 hr {
     border: none;
-    border-bottom: 3px dotted var(--cor-destaque);
+    border-bottom: 3px dotted var(--cor-primaria);
     margin-bottom: 24px;
-    width: 100%;
 }
 
 p {
@@ -68,124 +60,74 @@ p {
     text-align: left;
 }
 
-form{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-}
-
-#input-item {
-    padding: 12px 16px;
+.input-item {
     display: block;
-
+    padding: 12px 16px;
     border-radius: 24px;
     border: 1px solid var(--preto);
-
     width: 307px;
+
+    font-family: var(--fonte-texto);
 }
 
-#input-item::placeholder {
-    font-family: var(--fonte-input);
+.input-item::placeholder {
+    font-family: "Montserrat", sans-serif;
     font-size: 16px;
     line-height: 19px;
 }
 
-#button-item {
-    text-align: center;
-
-    border: none;
-    border-radius: 24px;
+.button-item {
     padding: 12px 16px;
-
+    border-radius: 24px;
+    background-color: var(--cor-primaria);
+    color: var(--neutro);
     font-family: var(--fonte-texto);
     font-size: 18px;
+    font-weight: 400;
     line-height: 24px;
-
-    background-color: var(--cor-destaque);
-    color: var(--cor-fundo);
-}
-
-
-ul {
-    width: 100%;
-}
-
-.item-lista-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    
-}
-
-.container-nome{
-    display: flex;
-    
-}
-
-.item-data{
-    font-size: 12px;
-    line-height: 20px;
-}
-
-
-
-.container-botoes{
-    background: transparent;
     border: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* CheckBox */
-
-.checkbox-input {
-    display: none;
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
 }
 
+.lista-item-container {
+    display: flex;
+    justify-content: space-between;
+}
 
+.lista-item-container div {
+    display: flex;
+    gap: 8px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.input-checkbox {
+    display: none;
+}
 
 .checkbox-customizado {
     width: 20px;
     height: 20px;
-    background-color: var(--cor-fundo);
+    background-color: var(--neutro);
     border: 1px solid var(--preto);
     cursor: pointer;
     border-radius: 4px;
-    margin-right: 8px;
 }
-
 
 .checked {
     background-color: var(--preto);
     position: relative;
 }
 
-.checked::after {
+.checkbox-customizado.checked::after {
     content: "";
     position: absolute;
     left: 30%;
@@ -193,8 +135,26 @@ ul {
     width: 5px;
     height: 14px;
 
-    border-top: 2px solid var(--cor-fundo);
-    border-left: 2px solid var(--cor-fundo);
+    border-top: 2px solid var(--neutro);
+    border-left: 2px solid var(--neutro);
 
     transform: rotate(-140deg);
+}
+
+.texto-data {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.item-lista-button {
+    border: none;
+    background-color: transparent;
+}
+
+.container-lista {
+    width: 100%;
+}
+
+#container-lista-comprados {
+    display: none;
 }
